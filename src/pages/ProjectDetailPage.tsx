@@ -1,6 +1,6 @@
 
 
-export default function ProjectDetailPage() {
+export function ProjectDetailPage() {
     return (
         <div>ProjectDetailPage</div>
     )
