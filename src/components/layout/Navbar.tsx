@@ -59,11 +59,7 @@ export function Navbar(): React.JSX.Element {
         }
     }, [isMenuOpen])
     return (
-        <nav className='flex items-center justify-between w-full px-6 py-4 bg-bg-dark border-b border-accent/20'>
-            <div className="font-display text-accent uppercase tracking-wider">
-                <span className="hidden md:inline">Case File #001: MARIANY</span>
-                <span className="md:hidden">#001: MRY</span>
-            </div>
+        <nav className='flex items-center justify-end w-full'>
             <button ref={buttonRef} onClick={toggleMenu} className="md:hidden p-2 hover:bg-accent/10 rounded transition-colors" aria-label="Toggle menu" aria-expanded={isMenuOpen}>
                 <span className="block w-6 h-0.5 bg-accent mb-1.5 transition-transform"></span>
                 <span className="block w-6 h-0.5 bg-accent mb-1.5 transition-opacity"></span>
@@ -76,7 +72,7 @@ export function Navbar(): React.JSX.Element {
                         <a
                             href={link.href}
                             onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleLinkClick(e, link.href)}
-                            className="text-text-dark-secondary hover:text-accent transition-colors duration-300 uppercase tracking-wide text-sm font-display"
+                            className="text-text-light-secondary dark:text-text-dark-secondary hover:text-text-light dark:hover:text-accent transition-colors duration-300 uppercase tracking-wide text-sm font-display"
                         >
                             {link.label}
                         </a>
