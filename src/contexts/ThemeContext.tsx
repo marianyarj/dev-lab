@@ -15,8 +15,6 @@ export function ThemeProvider({ children }: ThemeProviderProps): React.JSX.Eleme
 
     useEffect((): void => {
         const root: HTMLElement = document.documentElement
-        console.log('Current theme:', theme)  // adicione isso
-        console.log('Root element:', root)     // adicione isso
 
         if (theme === 'dark') {
             root.classList.add('dark')
@@ -24,7 +22,6 @@ export function ThemeProvider({ children }: ThemeProviderProps): React.JSX.Eleme
             root.classList.remove('dark')
         }
 
-        console.log('Classes after:', root.classList)  // adicione isso
         localStorage.setItem('theme', theme)
     }, [theme])
 
