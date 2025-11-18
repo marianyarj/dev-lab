@@ -8,9 +8,12 @@ import '@fontsource/space-mono/400.css'
 import '@fontsource/space-mono/700.css'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './routes/AppRoutes.tsx'
+import { ThemeProvider } from './contexts/ThemeContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </StrictMode>,
 )
