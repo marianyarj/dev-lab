@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar } from './Navbar'
 import { ThemeToggle } from '../home/ThemeToggle'
+import { LanguageSelector } from '../home/LanguageSelector'
 
 export function Header(): React.JSX.Element {
     return (
@@ -13,8 +14,9 @@ export function Header(): React.JSX.Element {
                         <span className="md:hidden whitespace-nowrap">#001: MRY</span>
                     </div>
 
-                    <div className="hidden md:flex">
+                    <div className="hidden md:flex gap-6">
                         <ThemeToggle />
+                        <LanguageSelector />
                     </div>
                 </div>
 
