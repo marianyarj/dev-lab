@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { ThemeToggle } from '../home/ThemeToggle'
+import { LanguageSelector } from '../home/LanguageSelector'
 
 export function Navbar(): React.JSX.Element {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
@@ -59,14 +61,19 @@ export function Navbar(): React.JSX.Element {
         }
     }, [isMenuOpen])
     return (
-        <nav className='flex items-center justify-end w-full'>
+        <nav className='flex items-center justify-end md:justify-center w-full'>
             <button ref={buttonRef} onClick={toggleMenu} className="md:hidden p-2 hover:bg-accent/10 rounded transition-colors" aria-label="Toggle menu" aria-expanded={isMenuOpen}>
                 <span className="block w-6 h-0.5 bg-accent mb-1.5 transition-transform"></span>
                 <span className="block w-6 h-0.5 bg-accent mb-1.5 transition-opacity"></span>
                 <span className="block w-6 h-0.5 bg-accent transition-transform"></span>
             </button>
             <ul ref={menuRef} className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row gap-6 absolute md:relative top-16 md:top-0 right-4 md:right-0 bg-bg-dark-secondary md:bg-transparent p-6 md:p-0 rounded border border-accent/20 md:border-0 shadow-lg md:shadow-none z-50`}
-            >
+            ><li className="md:hidden pb-4 mb-4 border-b border-accent/20">
+                    <div className="flex flex-col gap-4">
+                        <ThemeToggle />
+                        <LanguageSelector />
+                    </div>
+                </li>
                 {navLinks.map((link: { href: string; label: string }) => (
                     <li key={link.href}>
                         <a
